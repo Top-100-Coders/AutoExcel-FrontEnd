@@ -4,10 +4,12 @@ import '../styles/Chat.css'
 import Fab from '@mui/material/Fab';
 import MicIcon from '@mui/icons-material/Mic';
 import '../styles/Chat.css';
+import SendIcon from '@mui/icons-material/Send'; // Import the SendIcon
 
 export default function Chat() {
 
     const [prompt,setPrompt] = useState('')
+    const [confirmPage,setConfirmPage] = useState(false)
 
     const [industry, setIndustry] = useState(() => {
         const storedIndustry = localStorage.getItem('industry');
@@ -32,10 +34,14 @@ export default function Chat() {
   return (
     <div className='chat-base'>
       {industryPage&&<Industry onClose={()=>{setIndustryPage(false)}}/>}
+      {confirmPage&&<Confirm onClose={()=>{setConfirmPage(false)}}/>}
       <div className='text-area-container'>
         <textarea className='text-area' placeholder="Type your prompt here." onChange={(e)=>{setPrompt(e.target.value)}} value={prompt}/>
         <Fab color="primary" aria-label="voice-recognition" className='voice-icon'>
           <MicIcon />
+        </Fab>
+        <Fab color="primary" aria-label="send" className='send-icon' onClick={postData}>
+            <SendIcon />
         </Fab>
       </div>
     </div>

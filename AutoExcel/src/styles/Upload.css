@@ -43,6 +43,7 @@
   }
 
   img{
-    filter: invert(65%);
+     padding-bottom: 50px;
+     width: 250px;
   }
  

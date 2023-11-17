@@ -1,15 +1,17 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { useTypewriter } from 'react-simple-typewriter';
 import '../styles/Upload.css'; // Import your CSS file
 import TextField from '@mui/material/TextField';
 import { Input } from 'semantic-ui-react'
+import { useState } from 'react';
 
 interface UploadProps {}
 
 const Upload: React.FC<UploadProps> = () => {
   const navigate = useNavigate();
+
+  const [uploadPage, setUploadPage] = useState(false);
 
   const inputStyle = {
     "&::placeholder": {
@@ -37,6 +39,7 @@ const Upload: React.FC<UploadProps> = () => {
         </div>
         <input className="link" type="text" placeholder="Enter your excel sheet link...."/>
         <button className='btn1' onClick={() => navigate('/chat')}>Submit</button>
+        <button className='btn1' onClick={()=>{setUploadPage(true)}}>Upload</button>
       </div>
     </>
   );
