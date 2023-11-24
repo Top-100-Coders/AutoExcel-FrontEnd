@@ -41,6 +41,10 @@
   .link::placeholder {
     color: #999999; /* Set your desired placeholder text color */
   }
+  .color{
+    color: #C9ADA7;
+  }
+  
 
   img{
      padding-bottom: 50px;

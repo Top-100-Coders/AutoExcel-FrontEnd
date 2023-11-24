@@ -7,54 +7,73 @@
   }
   .text-area-container {
     display: flex;
+    margin-left: 3%;
+    position: relative;
+    top: 81%;
+    justify-content: center;
+    align-items: center;
+    
+    
     
   }
   
   .text-area {
     background-color: #4A4E69;
-    display: inline-block;
-    margin-left: 5%;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #C9ADA7;
     border-radius: 8px;
-    position: absolute;
-    bottom: 25px;
     width: 81%;
-    height: 10%;
+    height: 80px;
     
   }
   .text-area::placeholder {
     color: #C9ADA7; /* Set your desired placeholder color */
   }
 
+  .buttons-container{
+    
+    display: flex;
+    width: 15%;
+    justify-content: space-evenly;
+
+  }
+
   .voice-icon {
-    position: absolute;
-    top:  88vh;
-    left: 92%;
+    
     background-color: #9A8C98!important;
+    
   }
   .send-icon{
-    position: absolute;
-    top:  88vh;
-    left: 82%;
     background-color: #9A8C98!important;
+  }
+  .loading {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 999; /* Set a high z-index to make it appear on top */
+  }
+  .position{
+    position: absolute ;
+    right: 10%;
+    margin-top: 20px;
   }
 
   @media screen and (max-width: 769px) {
+    .text-area-container{
+        top: 77%;
+    }
     .text-area {
-      width: 80%;
-      height: 15%;
+        height: 110px;
+    }
+    .buttons-container{
+        flex-direction: column;
+        margin-left: 2%;
     }
     .send-icon{
-      top:  81vh;
-      left: 70%;
       
     }
     .voice-icon {
-      position: absolute;
-      top:  88vh;
-      left: 86%;
       background-color: #9A8C98!important;
     }
     

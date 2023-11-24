@@ -29,8 +29,8 @@ const IndustryDialog: React.FC<IndustryDialogProps> = ({ onSave , onClose}) => {
   };
 
   const handleSave = () => {
-    localStorage.removeItem('industry');
     //onSave(industry);
+    localStorage.setItem('industry', industry);
     handleClose();
   };
 
